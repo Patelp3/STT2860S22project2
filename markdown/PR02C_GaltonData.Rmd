@@ -1,6 +1,6 @@
 ---
 title: "Project 2C: Galton Data"
-author: "PUT YOUR NAME HERE"
+author: "Preet Piyush Patel, Ali Lmalki, Jocelyn Pelcastre-Gonzalez"
 date: '`r format(Sys.time(), "%A, %B %d, %Y @ %I:%M %p")`'
 output: 
   html_document: 
@@ -23,7 +23,8 @@ knitr::opts_chunk$set(
 ### Packages Used
 
 ```{r loadpackages}
-
+library(tidyverse)
+library(skimr)
 ```
 
 ### Datasets Used
@@ -35,19 +36,19 @@ Francis Galton, a cousin of Charles Darwin, studied the relationship between par
 #### Galton Main Dataset
 
 ```{r loadmaindata}
-
+data_main <- read_csv("https://raw.githubusercontent.com/STAT-JET-ASU/Datasets/master/Instructor/galtonfamiliesmain.csv")
 ```
 
 #### Galton Subset Dataset
 
 ```{r loadsubdata}
-
+data_sub <- read_csv("https://raw.githubusercontent.com/STAT-JET-ASU/Datasets/master/Instructor/galtonfamiliessub.csv")
 ```
 
 #### Galton Notebook Dataset
 
 ```{r loadnotebook}
-
+data_notebook <- read_csv("https://raw.githubusercontent.com/STAT-JET-ASU/Datasets/master/Instructor/galtonfamiliesnotebook.csv")
 ```
 
 <hr>
@@ -77,6 +78,76 @@ Load the three Galton datasets and use `glimpse()` to explore their structures. 
 
 ```{r assembledata1}
 
+data_main <- data_main %>%
+  mutate(
+    family_id = as.numeric(ifelse(FamilyID == "136A", 205, FamilyID)),
+    mother_ht = Mother * 1.08,
+    midparent = (Father + mother_ht) / 2,
+    child_ht = ifelse(Child == "Daughter", Height * 1.08, Height)
+  ) %>%
+  select(
+    family_id,
+    num_children = Children,
+    father_ht = Father,
+    mother_ht,
+    midparent,
+    child_sex = Child,
+    child_ht
+  ) %>%
+  arrange(
+    family_id,
+    desc(child_sex),
+    desc(child_ht)
+  )
+
+glimpse(data_main)
+
+data_sub <- data_sub %>%
+  mutate(
+    father_ht = FatherR + 60,
+    mother = MotherR + 60,
+    mother_ht = mother * 1.08,
+    midparent = (father_ht + mother_ht) / 2,
+    height = HeightR + 60,
+    child_ht = ifelse(Child == "Daughter", height * 1.08, height)
+  ) %>%
+  select(
+    family_id = FamilyID,
+    num_children = Children,
+    father_ht,
+    mother_ht,
+    midparent,
+    child_sex = Child,
+    child_ht
+  ) %>%
+  arrange(
+    family_id,
+    desc(child_sex),
+    desc(child_ht)
+  )
+
+glimpse(data_sub)
+
+data_notebook <- data_notebook %>%
+   select(
+      family_id = FamilyID,
+      Page
+   )
+
+
+data_notebook$family_id <- as.double(data_notebook$family_id)
+
+glimpse(data_notebook)
+
+dataset1 <- bind_rows(data_main, data_sub) %>%
+inner_join(data_notebook, by = "family_id") %>%
+arrange(
+   family_id,
+   desc(child_ht)
+)
+
+glimpse(dataset1)
+head(dataset1)
 ```
 
 #### Dataset #2
@@ -84,7 +155,11 @@ Load the three Galton datasets and use `glimpse()` to explore their structures. 
 From Dataset #1, select the variables `familyid` and `num_children`, then reduce the dataset so it contains only one unique row per family. Use `glimpse()` to display the result. (Hint: The final dataset should have 205 rows/observations and two variables/columns.)
 
 ```{r assembledata2}
+dataset2 <- dataset1 %>%
+  select(family_id, num_children) %>%
+  distinct()
 
+glimpse(dataset2)
 ```
 
 ### Visualization 1: Updated Scatterplot
@@ -118,6 +193,14 @@ Include the following.
 * use `theme()` to move the legend to the bottom of the scatterplot
 
 ```{r updatedscatterplot}
+ggplot(dataset1, aes(x = child_ht, y = midparent, color = child_sex)) + 
+  geom_point(size = 2, alpha = 0.7) +
+  scale_color_manual(values = c("orange", "blue")) +
+  coord_fixed() +
+  labs(x = "Child Height in inches", y = "mid-parent height in inches", title = "Plot of Child Height (Inches) vs. mid-parent Height (Inches)", color = "gender of child") +
+  theme_linedraw() +
+  theme(legend.position = "bottom")
+  
 
 ```
 
@@ -128,7 +211,8 @@ Include the following.
 Create a barplot to show the distribution of the number of children per family. Set the bars to something other than the default `width`. Scale the x-axis so that there is a tick mark for each bar. Choose appropriate colors, labels, themes, and/or and other types of formatting that you feel will enhance the meaning or visual appearance of the plot.  (Hint: Use `count()` to find out how many families have a given number of children, then use that information to create your plot.)
 
 ```{r childrenbarplot}
-
+ggplot(dataset2, aes(x = family_id, y = num_children)) +
+  geom_col()
 ```
 
 <hr>

@@ -1,7 +1,7 @@
 ---
 title: "Group Work Plan"
 subtitle: "STT2860 S22 Project 02"
-author: "Authors: ALL GROUP MEMBER NAMES HERE"
+author: "Authors: Preet, Jocelyn, Ali"
 date: "`r format(Sys.time(), '%A, %B %d, %Y @ %I:%M %p')`"
 output: 
   html_document: 
@@ -12,14 +12,14 @@ output:
 
 **Work Plan/Assignments**
 
-ERASE THIS TEXT AND OUTLINE/EXPLAIN YOUR PLAN FOR COMPLETING THE PROJECT WORK
+We will be doing the analysis of dataset while in he class period and the graph plotting will be done by ourselves, 
+Each one will be doing atleast 2 graphs
 
 **Completion Timeline**
 
-ERASE THIS TEXT AND OUTLINE/EXPLAIN YOUR PLANNED TIMELINE FOR TASK COMLETION
+2 days for dataset analysis and rest for graphs, Last day would be only for reviewing each others work
 
 **Communication Plan**
 
-ERASE THIS TEXT AND OUTLINE/EXPLAIN YOUR PLAN FOR GROUP COMMUNICATION
-
+the snapchat group that we made during the last project would be our first preference. but we might just use the forums just incase for important information!
 ***
