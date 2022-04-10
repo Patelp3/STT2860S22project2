@@ -221,21 +221,19 @@ ggplot(dataset2, aes(x = family_id, y = num_children)) +
 
 **Question 1:** Do you think your scatterplot is an improvement over Galton's original diagram? Are there any other modifications and/or additions you would make to enhance the clarity or usefulness of your plot?
 
-**ANSWER**
+Yes, the new scatterplot seems to have a better correlation between the midparent height and the children height.
 
 ERASE THIS TEXT AND ANSWER QUESTION HERE
 
 **Question 2:** Explain the rationale behind the choices you made when creating your scatterplot and barplot, such as size, color, transparency, or other features. What motivated your decisions? 
 
-**ANSWER**
-
-ERASE THIS TEXT AND ANSWER QUESTION HERE
+We made these choices to enhance the visual appearance of the plots, and to make the analysis phase of the experiment easier to conduct.
 
 **Question 3:** Considering best practices, how does using `coord_fixed()` enhance the authenticity of the information shown in the scatterplot, such as the relationship and spread of the data?
 
 **ANSWER**
 
-ERASE THIS TEXT AND ANSWER QUESTION HERE
+Fixing the ration of length between the y and x axes is important to preserve the relationship between the data. Otherwise the difference of units would violate this relationship.
 
 ***
 ```{r}
