@@ -196,8 +196,10 @@ Include the following.
 ggplot(dataset1, aes(x = child_ht, y = midparent, color = child_sex)) + 
   geom_point(size = 2, alpha = 0.7) +
   scale_color_manual(values = c("orange", "blue")) +
+  scale_x_continuous(breaks = seq(60, 80, by = 1)) +
+  scale_y_continuous(breaks = seq(60, 80, by = 1)) +
   coord_fixed() +
-  labs(x = "Child Height in inches", y = "mid-parent height in inches", title = "Plot of Child Height (Inches) vs. mid-parent Height (Inches)", color = "gender of child") +
+  labs(x = "Child Height in inches", y = "Mid-parent height in inches", title = "Plot of Child Height (Inches) vs. Mid-parent Height (Inches)", color = "Gender of child") +
   theme_linedraw() +
   theme(legend.position = "bottom")
   
@@ -211,8 +213,18 @@ ggplot(dataset1, aes(x = child_ht, y = midparent, color = child_sex)) +
 Create a barplot to show the distribution of the number of children per family. Set the bars to something other than the default `width`. Scale the x-axis so that there is a tick mark for each bar. Choose appropriate colors, labels, themes, and/or and other types of formatting that you feel will enhance the meaning or visual appearance of the plot.  (Hint: Use `count()` to find out how many families have a given number of children, then use that information to create your plot.)
 
 ```{r childrenbarplot}
-ggplot(dataset2, aes(x = family_id, y = num_children)) +
-  geom_col()
+childrendataset2 <- dataset2 %>% count(num_children)
+
+childrenbarplot <- 
+  ggplot(childrendataset2, aes(x = num_children, y = n)) +
+  geom_col(width = 0.8, fill = "dodgerblue3") +
+  scale_x_continuous(breaks = 1:15) +
+  theme_minimal() +
+  labs(title = "Number of Children in Each Family", 
+       x = "Number of Children", 
+       y = "Numer of Families")
+
+childrenbarplot
 ```
 
 <hr>
@@ -221,19 +233,22 @@ ggplot(dataset2, aes(x = family_id, y = num_children)) +
 
 **Question 1:** Do you think your scatterplot is an improvement over Galton's original diagram? Are there any other modifications and/or additions you would make to enhance the clarity or usefulness of your plot?
 
-Yes, the new scatterplot seems to have a better correlation between the midparent height and the children height.
+**ANSWER**
 
-ERASE THIS TEXT AND ANSWER QUESTION HERE
+Yes, the new scatterplot seems to have a better correlation between the midparent height and the children height. The new scatterplot is also easier to read than Galton's original diagram. It does not contain as much information as the original one, which makes it easier to read and understand. The 3D quality of Galton's original diagram makes it harder to read, removing that quality therefore enhanced our scatterplot's legibility. 
+
 
 **Question 2:** Explain the rationale behind the choices you made when creating your scatterplot and barplot, such as size, color, transparency, or other features. What motivated your decisions? 
 
-We made these choices to enhance the visual appearance of the plots, and to make the analysis phase of the experiment easier to conduct.
+**ANSWER**
+
+We made these choices to enhance the visual appearance of the plots, and to make the analysis phase of the experiment easier to conduct. Modifying the opacity and size of the dots in our scatterplot made it easier to be able to tell distinct points and determine where there was more density. The colors in the scatterplot are distinct enought to be able to be distinguished from each other. The sizes of the bars on the bargraph were changed to make it easier to read. We can still determine the distribution of chidren in each family while being able to see each bar separately. 
 
 **Question 3:** Considering best practices, how does using `coord_fixed()` enhance the authenticity of the information shown in the scatterplot, such as the relationship and spread of the data?
 
 **ANSWER**
 
-Fixing the ration of length between the y and x axes is important to preserve the relationship between the data. Otherwise the difference of units would violate this relationship.
+Fixing the ratio of length between the y and x axes is important to preserve the relationship between the data. Otherwise the difference of units would violate this relationship. Using `coord_fixed()` allows for us to keep both axes porportionate to each other, therefore we can be sure to accurately portray the relationship in the data. 
 
 ***
 ```{r}
