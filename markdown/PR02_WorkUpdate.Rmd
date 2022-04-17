@@ -10,6 +10,7 @@ output:
 ---
 ***
 
+
 **Work Plan/Assignments Update**
 
 Refer back to your original work plan. Has anything changed? Who has completed what portions of the project? Explain.
