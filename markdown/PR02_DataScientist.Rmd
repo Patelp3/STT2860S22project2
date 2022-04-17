@@ -1,7 +1,7 @@
 ---
 title: "Becoming a Data Scientist"
 subtitle: "STT2860 S22 Project 02"
-author: "Author: YOUR NAME HERE"
+author: "Author: Preet Patel"
 date: "`r format(Sys.time(), '%A, %B %d, %Y @ %I:%M %p')`"
 output: 
   html_document: 
@@ -12,38 +12,38 @@ output:
 
 **Q1: What is the name of the person interviewed?**
 
-ANSWER:
+ANSWER: Sherman Distin
 
 **Q2: Why did you choose the particular interview you did?**
 
-ANSWER:
+ANSWER: I read the description of the video and I discovered that he is owner of analytics consulting firm QueryBridge. He actually had an in interest in Data Science but opening his own firm I think that I want to do something like that in future. That really inspired me to watch this specific interview.
 
 **Q3: Does the person consider themselves a data scientist?**
 
-ANSWER:
+ANSWER: He mentions that he does not consider himself as  a data scientist, he would want to be way from the title but he does consider himself as a part of the spectrum of becoming a data scientist.  As we go further in the interview he explains that he was a really curious kid, doing science experiments always made him ask more questions and made him wonder the "What If" question. So he was pretty sure at that point that he would want to make a carrier in Science but just wasn't sure in what path of science actually. Later in school he couldn't study any of the courses he wanted to because the school that he attended was a very basic one and they did not have any higher level classes for math and science. but after the high school and before attending college, he got really interested in computer programming and it happened while he was just trying to make himself awae of the internet.
 
 **Q4: What is their formal and self-taught education in data science?**
 
-ANSWER:
+ANSWER:  He decided that computer programming is the exact thing that he would want to peruse in the future. That's when he started learing bind data bases which built his foundation for Object Oreineted Programming. But along with that he also did not feel the need to go to a college and get enrolled in a course, instead what he did was he found out the best courses that the college had to offer and downloaded thoer syllabie and boughht the book from other sourses and started learing himself.
 
 **Q5: What has been their career path? Did they start off in data science?**
 
-ANSWER:
+ANSWER: No he did not start off as a data Scientist rather his starting point Web front and re designing websites, making websites for local companies while in this processes he started getting curious about the whats happening exactly with all these websites and that when he got himself into web analytics. After that he got into web marketing. While in mrekting he to so analysis of the products in order to get to the specific sales and in the process of making himself able to do the analytics he came accros the path of data science analytics.
 
 **Q6: What programs/technologies to they use when working in data science?**
 
-ANSWER:
+ANSWER: He did not use a specific programming language while working on Data Science it was more like a trial and error thing where he just used to research and make conclusions based on the previous data of sales for the future sales and he did get instant results. If the result was as he expected he would conclude that the method was right, if the results are not as he expected he would try some other method. That how he was using data Science but even with out realizing that he is using data Science.
 
 **Q7: What is one interesting (to you) data science problem they have worked on?**
 
-ANSWER:
+ANSWER: I think marketing projects were really interesting for me, even though it did not directly connect to data science but it did definitely somewhere had a link. That is the field where he started getting more knowledge about the insight of a certain data and I feel while doing research for the marketing be was basically analysis the sales and that exaclty what data Science is all about.
 
 **Q8: Are there any specific pieces of advice they gave that inspire/resonate with you?**
 
-ANSWER:
+ANSWER: The part where he explains that going to the college is not that important as far as you can get the required education, does not matter how you get it. He himself learnt most of the thing from reading books, articles and watching videos. So that really inspired me because that are some times that I would what to know about something and my first instinct would be go on Google and read some articles to be sure about it before giving that information to there's.
 
 **Q9: Was there anything that surprised you or that you particularly identified with?**
 
-ANSWER:
+ANSWER: I my self was a curious child and i suppose that is what has led me to this point in my life I started learning about computers when I was in 5th grade and that when we stared of with basics like Excel and PowerPoint, but all that only make me more and more excited to see what what happening on the back end, I thing that part of curiosity as a child is what I would connect with Sherman.
 
 ***
