@@ -17,6 +17,7 @@ knitr::opts_chunk$set(
 )
 ```
 ***
+we need to push this 
 
 ## Setup
 
@@ -233,9 +234,9 @@ childrenbarplot
 
 **Question 1:** Do you think your scatterplot is an improvement over Galton's original diagram? Are there any other modifications and/or additions you would make to enhance the clarity or usefulness of your plot?
 
-**ANSWER**
+**ANSWER** 
 
-Yes, the new scatterplot seems to have a better correlation between the midparent height and the children height. The new scatterplot is also easier to read than Galton's original diagram. It does not contain as much information as the original one, which makes it easier to read and understand. The 3D quality of Galton's original diagram makes it harder to read, removing that quality therefore enhanced our scatterplot's legibility. 
+Yes, the new scatterplot seems to have a better correlation between the midparent height and the children height. The new scatterplot is also easier to read than Galton's original diagram. It does not contain as much information as the original one, which makes it easier to read and understand. The 3D quality of Galton's original diagram makes it harder to read, removing that quality therefore enhanced our scatterplot's legibility.   
 
 
 **Question 2:** Explain the rationale behind the choices you made when creating your scatterplot and barplot, such as size, color, transparency, or other features. What motivated your decisions? 
