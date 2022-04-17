@@ -10,6 +10,7 @@ output:
 ---
 ***
 
+
 **Work Plan/Assignments**
 
 We will be doing the analysis of dataset while in he class period and the graph plotting will be done by ourselves, 
