@@ -37,7 +37,7 @@ The datasets were downloaded from [Disney+ Movies and TV Shows | Kaggle](https:/
 #### Disney+ Dataset
 
 ```{r loaddisneydata}
-disneypluscontent <- read_csv("~/STT2860S22project2/data/disneypluscontent.csv")
+disneypluscontent <- read_csv("~/git_repositories/STT2860S22project2/data/disneypluscontent.csv")
 glimpse(disneypluscontent)
 
 ```
@@ -45,7 +45,7 @@ glimpse(disneypluscontent)
 #### Streaming Dataset
 
 ```{r loadstreamingdata}
-streamingcontent <-   read_csv("~/STT2860S22project2/data/streamingcontent.csv")
+streamingcontent <-   read_csv("~/git_repositories/STT2860S22project2/data/streamingcontent.csv")
 glimpse(streamingcontent)
 ```
 
